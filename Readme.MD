@@ -1,48 +1,21 @@
-Terraform SetUp
-Required Softwares:
 
-VS code as IDE
-terraform
-AWS CLI v2
-Git Bash as command prompt
-Steps
-Create IAM admin user in AWS account.
-Copy the access key and secret key. Don't push to any GitHub or internet.
-Configure user in your laptop using
-aws configure
-Add terraform.exe folder path to system env variables.
-![Alt text](image.png)
+Summary:
 
-What is IaaC? Why should we use Terraform?
+Migrating the data of the database from primary instance that is located in Mumbai region to the secondary region Ohio without losing any data.
 
-Version Control:
+Task1: 
+Deploy sample python webapp on linux server along with mysql as backend for storing sample database in Mumbai region.
 
-Since it is code, we can maintain in Git to version control. We can completely maintain the history of infra and collaboration is easy.
 
-Consistent Infra:
+Task2: 
+Setup replica of existing poc on the cloud of your choice by creating seperate vpc security group private keypair to take remote access and than deploying the sample python webapp and the database server on that server.
 
-Often we face the problem of different configurations in different environments like DEV, QA, PROD, etc. Using terraform we can create similar infra in multiple environments with more reliability.
+Task3:
+Take backup of the primary database data and migrate it to the secondary database.
 
-Automated Infra CRUD:
+Output:
 
-Using terraform we can create entire infra in minutes reducing the human errors. Updating infra using terraform is also easy. Using Terraform we can delete infra.
+Successfully completed the migrating data from primary database server in Mumbai region to secondary database server in Ohio region.
 
-Inventory Management:
+Note : please check the document for more details.
 
-If we create infra manually it is very tough to maintain the inventory of resources in diff region. But by seeing terraform you can easily tell the resources you are using in different regions.
-
-Cost Optimisation:
-
-When you need infra you can create in minutes. When you don't you can delete in minutes, so you can save the cost.
-
-Automatic dependency management:
-
-terraform can understand the dependency of resources. It can tell us the dependency clearly.
-
-Modular Infra:
-Code reuse. We can develop our own modules our use open source modules to reuse the infra code. instead of spending more time to create infra from the scratch we can reuse modules.
-
-Terraform Commands
-First command is to initialize the terraform, at this stage terraform downloads the provider into .terraform folder.
-terraform init
-Next we need to run plan command, at this stage terraform compares the infra between declared and existing. This is only plan terraform will not create resources.
